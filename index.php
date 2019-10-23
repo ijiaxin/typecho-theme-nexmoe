@@ -23,14 +23,14 @@ $this->need('layout/_partial/head.php');
             <?php while($this->next()): ?>
             <div class="nexmoe-post">
                 <a href="<?php $this->permalink() ?>">
-                    <div class="nexmoe-post-cover mdui-ripple"> 
-                        <?php if ($this->fields->Cover){ ?>
+                    <?php if ($this->fields->Cover){ ?>
+                        <div class="nexmoe-post-cover mdui-ripple">
                             <img src="<?php echo $this->fields->Cover ?>">
-                        <?php } else { ?>
-                            <img src="<?php echo $this->options->background ?>">
-                        <?php } ?>
-                        <h1><?php $this->title() ?></h1>
-                    </div>
+                            <h1><?php $this->title() ?></h1>
+                        </div>
+                    <?php }else{ ?>
+                        <h2><?php $this->title() ?></h2>
+                    <?php } ?>
                 </a>
                 <div class="nexmoe-post-meta">
                     <a><i class="nexmoefont icon-calendar-fill"></i><?php $this->date('Y年n月d日');?></a>
@@ -41,7 +41,7 @@ $this->need('layout/_partial/head.php');
                     <?php $this->tags(' ', true); ?>
                 </div>
                 <article>
-                    <?php $this->content(''); ?>
+                    <?php $this->excerpt(''); ?>
                 </article>
             </div>
             <?php endwhile; ?>
