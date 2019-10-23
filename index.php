@@ -26,7 +26,7 @@ $this->need('layout/_partial/head.php');
                     <?php if ($this->fields->Cover){ ?>
                         <div class="nexmoe-post-cover mdui-ripple">
                             <img src="<?php echo $this->fields->Cover ?>">
-                            <h1><?php $this->title() ?></h1>
+                            <h2><?php $this->title() ?></h2>
                         </div>
                     <?php }else{ ?>
                         <h2><?php $this->title() ?></h2>
@@ -41,7 +41,7 @@ $this->need('layout/_partial/head.php');
                     <?php $this->tags(' ', true); ?>
                 </div>
                 <article>
-                    <?php $this->excerpt(''); ?>
+                    <?php $this->excerpt(); ?>
                 </article>
             </div>
             <?php endwhile; ?>
